@@ -1,12 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
 import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 void main() => runApp(VideoPlayerApp());
-const PrimaryColor = const Color.fromRGBO(255, 255, 255,1);
+const PrimaryColor = const Color.fromRGBO(255, 255, 255, 1);
 const SecondaryColor = const Color.fromRGBO(240, 80, 174, 1);
 
 class VideoPlayerApp extends StatelessWidget {
@@ -28,6 +29,7 @@ class VideoPlayerScreen extends StatefulWidget {
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
+
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
   ScrollController controller = ScrollController();
@@ -38,35 +40,46 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     return Material(
       color: Color.fromRGBO(25, 9, 28, 1),
       child: new ListView(controller: controller, children: [
-         Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Stack(
-              children: [
-                Positioned.fill(
-                  child: FutureBuilder(
-                    future: _initializeVideoPlayerFuture,
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.done) {
-                        _controller.play();
-                        return SizedBox.expand(
-                            child: FittedBox(
-                                fit: BoxFit.cover,
-                                child: SizedBox(
-                                    width: _controller.value.size?.width ?? 0,
-                                    height: _controller.value.size?.height ?? 0,
-                                    child: VideoPlayer(_controller))));
-                      } else {
-                        return Center(
-                          child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                  Color.fromRGBO(240, 80, 174, 0.7))),
-                        );
-                      }
-                    },
+        Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: FutureBuilder(
+                  future: _initializeVideoPlayerFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      _controller.play();
+                      return SizedBox.expand(
+                          child: FittedBox(
+                              fit: BoxFit.cover,
+                              child: SizedBox(
+                                  width: _controller.value.size?.width ?? 0,
+                                  height: _controller.value.size?.height ?? 0,
+                                  child: VideoPlayer(_controller))));
+                    } else {
+                      return Center(
+                        child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                                Color.fromRGBO(240, 80, 174, 0.7))),
+                      );
+                    }
+                  },
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: new Alignment(0, 0.5),
+                    end: new Alignment(0, 1),
+                    colors: [
+                      Color.fromRGBO(25, 9, 28, 0),
+                      Color.fromRGBO(25, 9, 28, 1),
+                    ],
                   ),
                 ),
-                Material(
+                child: Material(
                   color: Color.fromRGBO(25, 9, 28, 0.8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,8 +114,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                                       backgroundColor: MaterialStateProperty
                                           .resolveWith<Color>(
                                         (Set<MaterialState> states) {
-                                          if (states
-                                              .contains(MaterialState.pressed)) {
+                                          if (states.contains(
+                                              MaterialState.pressed)) {
                                             return Colors.transparent;
                                           } else {
                                             return Colors.transparent;
@@ -112,7 +125,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                                       shape: MaterialStateProperty.all<
                                               RoundedRectangleBorder>(
                                           RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(25.0),
+                                        borderRadius:
+                                            BorderRadius.circular(25.0),
                                       ))),
                                   onPressed: () {},
                                   child: Text(
@@ -129,11 +143,11 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                           )),
                     ],
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
-
+        ),
         Container(
           height: 650,
           width: MediaQuery.of(context).size.width,
@@ -142,7 +156,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
               begin: new Alignment(0, -1),
               end: new Alignment(0, 1),
               colors: [
-                Color.fromRGBO(25, 9, 28, 0.8),
+                Color.fromRGBO(25, 9, 28, 1),
                 Color.fromRGBO(147, 54, 253, 1),
                 Color.fromRGBO(240, 80, 174, 1),
                 Color.fromRGBO(25, 9, 28, 1),
@@ -231,7 +245,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
         Container(
           height: 650,
           width: MediaQuery.of(context).size.width,
-
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -280,8 +293,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor:
-                          MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
+                              MaterialStateProperty.resolveWith<Color>(
+                            (Set<MaterialState> states) {
                               if (states.contains(MaterialState.pressed)) {
                                 return Colors.transparent;
                               } else {
@@ -290,10 +303,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                             },
                           ),
                           shape:
-                          MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
-                              ))),
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ))),
                       onPressed: () {},
                       child: Text(
                         'Billetterie',
@@ -307,7 +320,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                   ),
                 ),
               ),
-              Icon(Icons.remove_red_eye_outlined , color: PrimaryColor, size: 300.0),
+              Icon(Icons.remove_red_eye_outlined,
+                  color: PrimaryColor, size: 300.0),
             ],
           ),
         ),
@@ -315,8 +329,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
             height: 115,
             width: double.infinity,
             decoration: const BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(width: 1.0, color: Colors.black))),
+                border: Border(
+                    bottom: BorderSide(width: 1.0, color: Colors.black))),
             child: Material(
               color: Color.fromRGBO(25, 9, 28, 1),
               child: Align(
@@ -327,8 +341,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
             height: 115,
             width: double.infinity,
             decoration: const BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(width: 1.0, color: Colors.black))),
+                border: Border(
+                    bottom: BorderSide(width: 1.0, color: Colors.black))),
             child: Material(
               color: Color.fromRGBO(25, 9, 28, 0.8),
               child: Align(
@@ -392,13 +406,13 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   void initState() {
+
     _controller = VideoPlayerController.asset('assets/test.mp4');
 
     _initializeVideoPlayerFuture = _controller.initialize();
     _controller.setLooping(true);
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-
       _controller.setVolume(0);
 
       _controller.play();
