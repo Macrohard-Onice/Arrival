@@ -31,7 +31,7 @@ class _HomeLayout extends State<HomeLayout> {
                 Container(
                     width: 60, height: 60,
                     decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(.2),
+                        color: ArrivalTheme.secondaryColor.withOpacity(.2),
                         borderRadius: BorderRadius.circular(5)
                     ),
                     child: Center(child: Icon(icon, color: Colors.white.withOpacity(.8), size: 30))
@@ -68,7 +68,7 @@ class _HomeLayout extends State<HomeLayout> {
                 Container(
                     width: 60, height: 60,
                     decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(.2),
+                        color: ArrivalTheme.secondaryColor.withOpacity(.2),
                         borderRadius: BorderRadius.circular(5)
                     ),
                     child: Center(child: Icon(ArrivalIcons.team_line, color: Colors.white.withOpacity(.8), size: 30))
