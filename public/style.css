@@ -29,6 +29,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: 'Rubik', sans-serif;
   background-color: var(--backgroundColor);
 }
@@ -50,16 +51,6 @@ a {
 backdrop-filter: blur(1px);
 }
 
-#footer {
-  height: 400px;
-  width: 100%;
-  background: var(--backgroundColor);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
 .headerIconsContainer {
   display: flex;
   justify-content: center;
@@ -83,6 +74,7 @@ backdrop-filter: blur(1px);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .backgroundVido {
@@ -137,6 +129,8 @@ backdrop-filter: blur(1px);
   justify-content: center;
   flex-direction: row;
   backdrop-filter: blur(1px);
+
+padding-bottom: env(safe-area-inset-bottom);
 }
 
 .countdownContainer {
@@ -145,7 +139,7 @@ backdrop-filter: blur(1px);
   align-items: center;
   justify-content: center;
   flex-direction: column;
-width: 40%;
+width: 45%;
 }
 .arrivalBottomText {
   color: var(--primaryColor);
@@ -162,9 +156,12 @@ width: 40%;
 }
 
 #onScroll {
-  display: none;
+  display: flex;
+  position:  absolute;
   margin-left: 1em;
-width: 40%;
+width: 45%;
+transform: translateX(100vw);
+
 align-items: center;
 justify-content: center;
 }
@@ -212,10 +209,17 @@ justify-content: center;
   padding-top: 4em;
 }
 .iconContainer {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
   background: rgba(255,255,255, 0.2);
-  border-radius: 10px;
+  border-radius: 5px;
 
+}
+.iconContainer > .headerIcon{
+  width: 30px;
+  height: 30px;
 }
 .informationTile {
   display: flex;
@@ -247,6 +251,11 @@ filter: brightness(150%);
   opacity: 0.7;
 }
 
+.teamRow {
+  display: flex;
+  overflow: hidden;
+}
+
 .countersContainer {
   background: var(--backgroundColor);
   width:100%;
@@ -263,9 +272,81 @@ filter: brightness(150%);
 }
 
 .counter {
-  font-size: 35px;
+  font-size: 50px;
   font-weight: 500;
 }
 .counterSubtitle {
-  font-size: 22px;
+  font-size: 16px;
+  opacity: 0.7;
+}
+.teamIcon{
+  border-radius: 50%;
+  border: 6px solid var(--backgroundColor);
+  width: 45px;
+  height: 45px;
+}
+
+.teamSeparator {
+  margin-right: -13px;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 250px;
+  width: 100%;
+  background: var(--backgroundColor);
+  padding-top: 10em;
+
+
+}
+
+
+.navBarFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separatorBarFooter {
+  width: 10vw;
+}
+
+.navBarFooterText {
+  font-size: 18px;
+  color: white;
+}
+
+.lineFooter {
+  margin-top: 2em;
+  width: 100%;
+  height: 1px;
+  background-color: grey;
+  opacity: 0.2;
+}
+
+.footerTitle {
+  font-size: 16px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.billeterieContainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.ticketOption {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 10% 1em 10%;
+  border-bottom: 1px solid white;
 }

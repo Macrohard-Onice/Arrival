@@ -7,7 +7,9 @@
 <head>
 
 
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+
   <meta name=”robots” content="index, follow">
   <meta charset="UTF-8" />
   <title>
@@ -36,7 +38,7 @@
 
     <div class="videoBackgroundContainer">
 
-      <video class="backgroundVido" src="assets/videos/test.mp4" autoplay muted playsinline>
+      <video class="backgroundVido" src="assets/videos/test.mp4" autoplay muted playsinline id="videoBackground">
 
       </video>
 
@@ -48,9 +50,9 @@
       <div class="separator">
 
       </div>
-      <a href="billeterie">
+      <a href="billeterie" id="landingButton">
         <div class="mainButtonContainer">
-          <a class="primaryText"> Billeterie</a>
+          <span class="primaryText"> Billeterie</span>
         </div></a>
 
     </div>
@@ -87,7 +89,7 @@
           <span class="layoutTextContainer" >
             <a class='layoutTitle'> Vendredi 23 octobre</a>
             <br>
-            <a href="CALSHOW://" class='layoutsubTitle'> Appuyer pour ajouter au calendrier</a>  </span>
+            <a class='layoutsubTitle'> Appuyer pour ajouter au calendrier</a>  </span>
           </div>
 
 
@@ -119,9 +121,10 @@
 
               </div>
               <span class="layoutTextContainer">
-                <a class='layoutTitle'> Vendredi 23 octobre</a>
-                <br>
-                <a  class='layoutsubTitle'> Appuyer pour ajouter au calendrier</a>  </span>
+              <div class="teamRow" id='teamContainer'>
+
+              </div>
+               </span>
               </div>
 
             </div>
@@ -131,19 +134,19 @@
               <span class='counterTextContainer'>
                 <a href="#" class='counter' id="count" >0</a>
                 <br>
-                <a href="#" class='counterTitle'> Invités</a>
+                <a href="#" class='counterSubtitle'> Nombre d'invités</a>
 
               </span>
               <span class='counterTextContainer'>
                 <a class='counter' id="count2" >0</a>  <a class='counter' >€</a>
                 <br>
-                <a href="#" class='counterTitle'> Prix de départ des places</a>
+                <a href="#" class='counterSubtitle'> Prix de départ des places</a>
 
               </span>
               <span class='counterTextContainer'>
-                <a href="#" class='counter' id="count3" >0</a>  <a class='counter' >€</a>
+                <a href="#" class='counter' id="count3" >0</a> <a class='counter' >€</a>
                 <br>
-                <a href="#" class='counterTitle'> La conso la plus chère</a>
+                <a href="#" class='counterSubtitle'> Conso la plus chère </a>
 
               </span>
 
@@ -156,7 +159,19 @@
         </main>
 
         <footer id="footer">
+<div class="navBarFooter">
+<a class="navBarFooterText">Billeterie</a>
+<div class="separatorBarFooter"></div>
+  <a class="navBarFooterText">Contact</a>
 
+
+</div>
+
+<div class="lineFooter">
+
+</div>
+
+<a class="footerTitle" style="margin-top: 2em;"> Copyright © 2021, ARRIVAL Tous droits réservés, Powered by HiCards</a>
 
 
         </footer>

@@ -33,6 +33,16 @@ $('#openCalendar').on('click', function(){
        $( '<a href="CALSHOW://"></a>' )[0].click();
 })
 
+
+
+for (var i = 0; i < 10; i++) {
+$( "#teamContainer" ).append("<img src='assets/images/man.jpg' class='teamIcon'> <div class='teamSeparator'> </div>");
+}
+
+
+
+
+
 function animateValue(obj, start, end, duration) {
   let startTimestamp = null;
   const step = (timestamp) => {
@@ -80,11 +90,21 @@ $(window).scroll(function() {
 
 });
 var intervalId = window.setInterval(function(){
-  if ($(window).scrollTop() > 500) {
-    $('#onScroll').css('display', 'flex')
 
-  }  if ($(window).scrollTop() < 500) {
-      $('#onScroll').css('display', 'none')
+$('#videoBackground').trigger('play');
+  if ($(window).scrollTop() > 600) {
+
+
+        $('#onScroll').css('transform', ' translateX(50%) ')
+
+        $('.countdownContainer').css('transform', ' translateX(-50%)')
+
+
+  }  if ($(window).scrollTop() < 600) {
+
+
+  $('#onScroll').css('transform', ' translateX(100vw)')
+        $('.countdownContainer').css('transform', ' translateX(0)')
 
     }
 }, 10);
