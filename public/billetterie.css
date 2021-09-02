@@ -51,7 +51,7 @@ a {
   text-decoration: none;
 }
 #header {
-  height: 100px;
+  height: 120px;
   width: 100%;
   z-index: 100;
   background: linear-gradient( var(--backgroundColorMediumOpacity),  var(--backgroundColorNoOpacity));
@@ -59,9 +59,18 @@ a {
   top: 0px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+.headerContainer {
+width: 50%;
+max-width: 800px;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  backdrop-filter: blur(2px);
+
 }
 
 .HeaderTop {
@@ -153,6 +162,7 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
+  cursor: pointer;
 
 }
 .separator {
@@ -392,12 +402,26 @@ z-index: 800;
 .wholeTicket {
     transition: 0.5s;
   width: 100%;
-  padding: 0.5em 0 0.5em 0;
+  border-radius: 20px;
+  padding: 0.75em 0 0.75em 0;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+overflow: hidden;
+cursor: default;
+}
+
+#append {
+  transition: 0.5s;
+width: 100%;
+padding: 0.5em 0 0.5em 0;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
 overflow: hidden;
 }
 
@@ -507,38 +531,30 @@ opacity: 0;
   width: 100%;
 }
 label {
+  width: 80%;
+      max-width: 500px;
   color: white;
   opacity: 0.8;
+
 }
-input[type=text] {
-  margin: 2em;
-  border-radius: 10px;
-  background: none;
-  border: 1px solid grey;
+input[type=text],input[type=email], input[type=password], select, textarea {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
   width: 80%;
-    max-width: 500px;
-  height: 3em;
+  max-width: 500px;
+  padding: 12px;
+  border: 1px solid grey;
+  border-radius:10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+
+  resize: none;
+  outline: none;
+  transition: 0.2s;
+  margin-bottom: 3em;
+  background: var(--backgroundColor);
+
 }
 input {
-  color: white;
-}
-.cardLabel {
-  margin-bottom: 1em!important;
-
-}
-
-.stripeContainer {
-
-
-  width: 55%!important;
-  max-width: 370px;
-  padding: 0.5em;
-border: 1px solid grey;
-border-radius: 10px;
-font-size: 22px;
-transform:  scale(1.3);
-}
-
-.stripeForm {
   color: white;
 }

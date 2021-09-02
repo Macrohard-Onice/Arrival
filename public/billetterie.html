@@ -22,18 +22,21 @@
 <body >
 
   <header id="header">
+    <div class="headerContainer">
+
     <div class="HeaderTop">
 
-      <img src="assets/images/balloon.png" href="index.html" alt="" class="headerIcon" onclick="window.location='index.html;'">
+      <img src="assets/images/balloon.png" alt="" class="headerIcon" onclick="window.location='index.html'">
 
       <div class="separatorWidth">
       </div>
-      <a href="Billeterie" class="headerText"> Billetterie</a>
+      <a href="Billeterie.html" class="headerText"> Billetterie</a>
     </div>
 
     <a href="#" class="ChooseText">Choisis ta place !</a>
 
 
+  </div>
   </header>
 
   <main id='main' >
@@ -149,7 +152,7 @@
     <div class="formContainer">
 
 
-      <div class="wholeTicket" id="append">
+      <div  id="append">
 
       </div>
 
@@ -161,12 +164,15 @@
 
 
       <form class="mainForm" action="create-checkout-session.php" method="post">
-        <label for="">Nom*</label>
-        <input type="text" name="" value="" required>
-        <label for="">Prénom*</label>
-        <input type="text" name="" value="" required>
-        <label for="">Email*</label>
-        <input type="text" name="" value="" required>
+
+        <label for="">Ton nom*</label>
+        <input type="text" placeholder="John" required>
+
+        <label for="">Ton prénom*</label>
+        <input type="text" placeholder="Dante" required>
+
+        <label for="">Ton Email*</label>
+        <input type="email" placeholder="grossesoirée@soirée.com"  required>
 
         <button  type="submit" class="mainButtonContainer">
 

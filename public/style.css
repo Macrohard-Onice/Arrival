@@ -147,6 +147,7 @@ padding-bottom: env(safe-area-inset-bottom);
   justify-content: center;
   flex-direction: column;
 width: 45%;
+max-width: 600px
 }
 .arrivalBottomText {
   color: var(--primaryColor);
@@ -167,6 +168,7 @@ width: 45%;
   position:  absolute;
   margin-left: 1em;
 width: 45%;
+max-width: 600px;
 transform: translateX(100vw);
 
 align-items: center;
@@ -192,6 +194,8 @@ justify-content: center;
 
 }
 .descriptionDescription {
+
+  max-width: 800px;
   text-align: center;
   margin: 0 2em 0 2em;
 }
@@ -208,6 +212,7 @@ justify-content: center;
 
 .layoutContainer {
   background: var(--backgroundColor);
+
   width:100%;
   display: flex;
   align-items: center;
@@ -215,6 +220,8 @@ justify-content: center;
   flex-direction: column;
   padding-top: 4em;
 }
+
+
 .iconContainer {
   display: flex;
   align-items: center;
@@ -241,6 +248,8 @@ justify-content: center;
 .informationTile {
   display: flex;
   width: 100%;
+  max-width: 800px;
+  border-radius: 25px;
   align-items: center;
   justify-content: center;
   margin: 1em 0 1em 0;
