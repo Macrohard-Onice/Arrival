@@ -64,7 +64,7 @@ a {
   backdrop-filter: blur(2px);
 }
 .headerContainer {
-width: 50%;
+width: 100%;
 max-width: 800px;
   display: flex;
   flex-direction: column;
@@ -103,6 +103,7 @@ max-width: 800px;
 
   height: 40px;
   width: 40px;
+  cursor: pointer;
 }
 
 .ticketIcon {

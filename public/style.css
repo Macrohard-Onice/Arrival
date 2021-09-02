@@ -298,13 +298,33 @@ filter: brightness(150%);
 }
 
 .counter {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 500;
+
+}
+.counterDate {
+  flex-direction: row!important;
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+}
+.columnCounter {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items:  center;
+  justify-content: center;
+  margin: 0 10px 0 10px;
+  width: 50px;
+}
+.countSeparator {
+  opacity: 0.8;
+  font-size: 60%;
 }
 .counterSubtitle {
   font-size: 16px;
   opacity: 0.7;
 }
+
 .teamIcon{
   border-radius: 50%;
   border: 6px solid var(--backgroundColor);

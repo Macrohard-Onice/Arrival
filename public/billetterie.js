@@ -46,3 +46,6 @@ $('#onScroll').on('click', function(){
   $('#append').find(".selectedInner").removeClass('selectedInner');
 
 })
+$('#append').on('click', function(){
+window.location.reload()
+  })
