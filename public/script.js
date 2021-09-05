@@ -41,7 +41,6 @@ var x = setInterval(function() {
 
 
 
-
 $('#goMaps').on('click', function(){
 
   var adress = $(this).find( ".layoutTitle" ).text();
@@ -88,16 +87,16 @@ var countDownDate = new Date("Oct 30, 2021 20:30:00").getTime();
 
 
       const count5days = document.getElementById('count5Days');
-      animateValue(count5days, 0, days, 900);
+      animateValue(count5days, 0, days, 1500);
 
       const count5Hours = document.getElementById('count5Hours');
-      animateValue(count5Hours, 0, hours, 900);
+      animateValue(count5Hours, 0, hours, 1500);
 
       const count5Minutes = document.getElementById('count5Minutes');
-      animateValue(count5Minutes, 0, minutes, 900);
+      animateValue(count5Minutes, 0, minutes, 1900);
 
       const count5Seconds = document.getElementById('count5Seconds');
-      animateValue(count5Seconds, 0, seconds, 900);
+      animateValue(count5Seconds, 0, seconds, 1900);
 
 var inited = false
 

@@ -40,6 +40,7 @@ body {
   font-family: 'Rubik', sans-serif;
   background-color: var(--backgroundColor);
 }
+
 main {
 
   overflow-x: hidden!important;
@@ -51,18 +52,28 @@ a {
   text-decoration: none;
 }
 #header {
-  height: 120px;
+  height: 140px;
   width: 100%;
   z-index: 100;
-  background: linear-gradient( var(--backgroundColorMediumOpacity),  var(--backgroundColorNoOpacity));
+  background: linear-gradient( var(--backgroundColor) -10%,  var(--backgroundColorNoOpacity));
   position: sticky;
   top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(2px);
+
+
+
 }
+
+.headerTicketing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .headerContainer {
 width: 100%;
 max-width: 800px;
@@ -70,6 +81,7 @@ max-width: 800px;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
 
 }
 
@@ -81,10 +93,12 @@ max-width: 800px;
   margin-top: 1em;
 }
 .headerText {
+
   font-size: 22px;
   font-weight: 600;
 }
 .ChooseText {
+
   margin-top: 1.5em;
   margin-left: 2em;
   font-size: 18px;
@@ -99,13 +113,26 @@ max-width: 800px;
   align-items: center;
 }
 
-.headerIcon, .headerIconCenter {
+.headerIcon, .headerIconCenter, .headerIconFiltered {
 
   height: 40px;
   width: 40px;
   cursor: pointer;
 }
+.headerIconFiltered {
 
+filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(46deg) brightness(100%) contrast(103%);
+}
+.informationText {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.9;
+  color: white;
+  width: 90%;
+
+  margin: 2em 0 2em 0;
+    text-align: center;
+}
 .ticketIcon {
 
     height: 40px;
@@ -123,22 +150,7 @@ max-width: 800px;
 }
 
 
-.videoBackgroundContainer {
 
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.backgroundVido {
-  height: 100vh;
-  top: 0px;
-
-  position: fixed;
-  z-index: -10;
-}
 
 .landingContainer {
   height: 100vh;
@@ -187,7 +199,7 @@ max-width: 800px;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  backdrop-filter: blur(1px);
+
 z-index: 800;
   padding-bottom: env(safe-area-inset-bottom);
 }
@@ -397,13 +409,13 @@ z-index: 800;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+
 }
 
 .wholeTicket {
     transition: 0.5s;
   width: 100%;
-  border-radius: 20px;
+
   padding: 0.75em 0 0.75em 0;
   display: flex;
   align-items: center;
@@ -558,4 +570,21 @@ input[type=text],input[type=email], input[type=password], select, textarea {
 }
 input {
   color: white;
+}
+
+.successContainer {
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sucessText {
+  color: white;
+  width: 90%;
+  max-width: 800px;
+}
+
+.successTitle {
+  font-size: 45px;
 }

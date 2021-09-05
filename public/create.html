@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="fr-FR">
+<head>
+
+
+  <meta name="viewport" content="width=device-width">
+  <meta name=”robots” content="index, follow">
+  <meta charset="UTF-8" />
+  <title>
+    Créer un compte - HiCards
+  </title>
+
+  <link rel="stylesheet" href="hicards.css">
+  <link rel="stylesheet" href="create.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style media="screen">
+  .focused1 {
+    color: var(--SecondaryColor);
+  }
+</style>
+</head>
+<body >
+
+  <header id="header">
+
+    <div class="container-header">
+      <div class="header-logo-wrapper" >
+        <a href="main">
+          <img id="headere" class="header-logo-image" src="svg/logo.png">
+        </a>
+      </div>
+
+      <div class="nav-bar-wrapper">
+        <ul class="nav-bar">
+
+
+          <li  class="nav-bar-element"><a class="focused1" href="main"> HiCards </a>  </li>
+
+          <li class="nav-bar-element"><a class="focused3" href="index.html"> Arrival </a>  </li>
+          <li class="nav-bar-element"><a class="focused4" href="contact"> Contact </a>  </li>
+
+
+
+        </ul>
+      </div>
+
+      <div class="header-right-elements">
+        <button class="contactbtn2 btn" > TÉLÉCHARGE L'APP</button>
+
+        <a onclick="myFunction()">  <img class="menu-icon" src="svg/menu.svg"></a>
+      </div>
+    </header>
+
+    <div id="show" class="mobile-menu-wrapper" style="display: none;">
+      <ul class="list-mobile">
+
+
+        <li class="list-mobile-elem"><a class="focused1" href="main"> L''application </a> </li>
+        <li class="list-mobile-elem"><a class="focused3" href="index.html"> Arrival </a>  </li>
+        <li  class="list-mobile-elem"><a class="focused4" href="contact"> Contact </a>  </li>
+
+
+      </ul>
+
+    </div>
+  </div>
+
+</header>
+
+<main >
+
+
+  <div class="formContainer">
+    <div class="mainForm">
+      <h1 style="font-size: 18px; opacity: 0.7; text-align: center;">Pour pouvoir retrouver ton billet sur HiCards et accélérer ton expérience, les informations d'inscription ont été préremplies grâce aux informations renseignées lors de ta réservation. 😉</h1>
+
+<br><br>
+      <label for="">Prénom</label>
+      <input  id="name" type="text" name="" placeholder="Ton prénom" value="">
+      <label for="">Nom</label>
+      <input id="lastname" type="text" name="" placeholder="Ton nom" value="">
+      <label for="">Email</label>
+      <input id="email" type="email" name="" placeholder="Ton Email" value="">
+
+      <label for="">Mot de passe</label>
+      <input id="pass" type="password" placeholder="Mot de passe" name="" value="">
+
+      <button type="button" class="btn"name="button">Créer mon compte en 1 clic</button>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+</main>
+
+<footer>
+
+  <div class="main-footer-container">
+
+    <div class="top-row-footer">
+
+
+
+
+
+      <div class="coordonnees-footer-wrapper">
+
+
+        <div class="coordonnees-footer-wrapper-image">
+
+        </div>
+
+        <span class="coordonnees-footer-wrapper-text"> HiCards <br> contact@HiCards.com <br> <br>
+          <button class="contactbtn2 btn" > Contactez-nous</button><span>
+
+          </div>
+
+
+          <button  class="contactbtn2 btn pos" > TÉLÉCHARGE L'APP</button>
+
+
+        </div>
+
+
+        <span class="copyright-text"> HiCards © 2021</span>
+      </div>
+    </footer>
+
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js'></script>
+    <script src="rellax.min.js"></script>
+    <script>
+
+
+
+    $('#email').val(localStorage.getItem("email"));
+    $('#email').attr('disabled', 'true');
+    $('#email').css('background', '#d2d2d2');
+
+
+    $('#name').val(localStorage.getItem("name"));
+    $('#name').attr('disabled', 'true');
+    $('#name').css('background', '#d2d2d2');
+
+    $('#lastname').val(localStorage.getItem("lastname"));
+    $('#lastname').attr('disabled', 'true');
+    $('#lastname').css('background', '#d2d2d2');
+
+
+
+    var DEBUG = false;
+
+    $(window).scroll(function(){
+      if($(document).scrollTop() > 0) {
+        $('#header').addClass('small');
+        $('#fd').addClass('small');
+        $('#headere').addClass('small');
+        $('#show').addClass('small');
+        $('#show2').addClass('small');
+        $('#show3').addClass('small');
+
+
+      } else {
+
+        $('#header').removeClass('small');
+        $('#fd').removeClass('small');
+        $('#headere').removeClass('small');
+        $('#show').removeClass('small');
+        $('#show2').removeClass('small');
+        $('#show3').removeClass('small');
+      }
+    });
+    function myFunction() {
+      var x = document.getElementById('show');
+
+
+      if (x.style.display === 'flex'){
+
+        x.style.animation = 'slideout 0.5s ';
+
+        setTimeout(function(){fct89()}, 450);
+
+
+      } else {
+        x.style.display = 'flex';
+        x.style.animation = 'slidein 0.5s ';
+      }
+    }
+    function fct89() {
+      var x = document.getElementById('show');
+      x.style.display = 'none'
+
+    }
+
+
+  </script>
+
+
+
+
+</body>
+</html>

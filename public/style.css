@@ -43,12 +43,15 @@ a {
   height: 100px;
   width: 100%;
   z-index: 100;
-  background: linear-gradient( var(--backgroundColorMediumOpacity),  var(--backgroundColorNoOpacity));
+  background: linear-gradient( var(--backgroundColor)-10%,  var(--backgroundColorNoOpacity));
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0,1)), color-stop(85%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, 0)) );
+
 }
 
 .headerIconsContainer {
@@ -75,9 +78,11 @@ backdrop-filter: blur(1px);
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
 }
 
 .backgroundVido {
+    filter: blur(15px);
   height: 100vh;
   top: 0px;
 
@@ -87,6 +92,7 @@ backdrop-filter: blur(1px);
 
 .landingContainer {
   height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,6 +104,7 @@ backdrop-filter: blur(1px);
   display: flex;
   flex-direction: column;
   align-items: center;
+    margin-top: -25px;
   justify-content: center;
 width:30vh;
 }
@@ -126,18 +133,21 @@ width:30vh;
 
 
 .bottomBarContainer {
-  height: 80px;
+  height: 100px;
   width: 100%;
   position: fixed;
+  z-index: 500;
   bottom:0px;
-  background: linear-gradient( var(--backgroundColorNoOpacity),  var(--backgroundColor));
+  background: linear-gradient( var(--backgroundColorNoOpacity),  var(--backgroundColor) 110%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  backdrop-filter: blur(1px);
-
+  backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 padding-bottom: env(safe-area-inset-bottom);
+
+-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0,0)), color-stop(15%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, 1)) );
 }
 
 .countdownContainer {
@@ -156,7 +166,7 @@ max-width: 600px
 }
 
 .countdown {
-  font-size: 20px;
+  font-size: 22px;
   color: var(--primaryColor);
   font-weight: 300;
   width: 100%;
@@ -310,15 +320,18 @@ filter: brightness(150%);
 }
 .columnCounter {
   display: flex;
-  flex-direction: column-reverse;
-  align-items:  center;
+  flex-direction: column;
+align-items: center;
   justify-content: center;
-  margin: 0 10px 0 10px;
-  width: 50px;
+margin: 0 0.1em 0 0.1em;
+width: 1.5em;
+
 }
+
 .countSeparator {
   opacity: 0.8;
-  font-size: 60%;
+  font-size: 30%;
+
 }
 .counterSubtitle {
   font-size: 16px;
@@ -377,4 +390,35 @@ filter: brightness(150%);
   font-size: 16px;
   opacity: 0.7;
   text-align: center;
+}
+
+.contactContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactDesciptionTitle {
+font-size: 50px;
+font-weight: 700;
+width: 90%;
+
+}
+
+.contactDesciptionButton{
+  width: 180px;
+  height:65px;
+  border-radius: 15px;
+  background: linear-gradient( 0.75turn, var(--gradientBase),  var(--gradientHighlight));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactButtonText {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.8;
 }

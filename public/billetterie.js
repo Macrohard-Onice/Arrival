@@ -1,8 +1,6 @@
 
 
 
-
-
 $('.wholeTicket').on('click', function(){
 
   $('.bottomBarContainer').css("display", 'flex');
@@ -15,8 +13,7 @@ $('.wholeTicket').on('click', function(){
 
 
 })
-
-
+  $('.HeaderWrapper').css("background", 'black');
 
 $('#onScroll').on('click', function(){
 
@@ -47,5 +44,32 @@ $('#onScroll').on('click', function(){
 
 })
 $('#append').on('click', function(){
-window.location.reload()
-  })
+  window.location.reload()
+})
+
+
+$('.wholeTicket').on('click', function(){
+
+  $('.bottomBarContainer').css("display", 'flex');
+  $('#onScroll').css("transform", 'translateX(0)');
+  $('.wholeTicket').removeClass("selected");
+  $('.wholeTicket').find('.ticketOption').removeClass( "selectedInner" );
+  $(this).addClass( "selected" );
+  $(this).find('.ticketOption').addClass( "selectedInner" );
+
+
+
+})
+
+function passInformations() {
+
+  localStorage.setItem("name",$( "#name" ).val());
+
+  localStorage.setItem("lastname",$( "#lastname" ).val());
+
+  localStorage.setItem("email",$( "#email" ).val());
+
+
+
+
+}
