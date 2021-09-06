@@ -1,0 +1,82 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{margin: 0;
+  padding: 0px;
+  border:0;
+  transition: 0.5s;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  -webkit-overflow-scrolling: touch;
+
+}
+
+:root {
+  --primaryColor: rgba(0, 0, 0, 0.7);
+  --secondaryColor: rgba(240, 80, 174, 1);
+
+  --gradientHighlight: rgba(240, 80, 174, 1);
+  --gradientBase: rgba(147, 54, 253, 1);
+
+  --backgroundColor: #ffffff;
+
+  --backgroundColorNoOpacity: rgba(25, 9, 28, 0);
+  --backgroundColorMediumOpacity: rgba(25, 9, 28, 0.6);
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--backgroundColor);
+
+}
+
+.ticketsContainer {
+  height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: scroll;
+}
+.ticketCont {
+  width: 50vw;
+  max-width: 500px;
+  height:35vh;
+  background: radial-gradient(circle at left,transparent,transparent 3.8%, var(--primaryColor) 4%, var(--primaryColor) 50%, transparent 50%, transparent 100%),
+  radial-gradient(circle at right,transparent,transparent 3.8%, var(--primaryColor) 4%, var(--primaryColor) 50%, transparent 50%, transparent 100%),
+  radial-gradient(circle at bottom, var(--primaryColor) 50%, transparent 50%, transparent 100%),
+  radial-gradient(circle at top,var(--primaryColor) 50%, transparent 50%, transparent 100%);
+  border-radius: 22px;
+padding: 2px;
+margin: 1em;
+
+}
+
+.ticket {
+  width: 50vw;
+  max-width: 500px;
+  height:35vh;
+  background: radial-gradient(circle at left,transparent,transparent 4%, var(--backgroundColor) 4.2%, var(--backgroundColor) 50%, transparent 50%, transparent 100%),
+  radial-gradient(circle at right,transparent,transparent 4%, var(--backgroundColor) 4.2%, var(--backgroundColor) 50%, transparent 50%, transparent 100%),
+  radial-gradient(circle at bottom, var(--backgroundColor) 50%, transparent 50%, transparent 100%),
+  radial-gradient(circle at top,var(--backgroundColor) 50%, transparent 50%, transparent 100%);
+  border-radius: 20px;
+display: flex;
+align-items: center;
+justify-content:  flex-start;
+flex-direction: column;
+overflow: hidden;
+
+}
+
+.headerTicket {
+  width: 100%;
+
+  background: linear-gradient( 0.75turn, var(--gradientBase),  var(--gradientHighlight));
+  height: 50px;
+}
